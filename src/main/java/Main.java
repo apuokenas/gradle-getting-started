@@ -47,6 +47,8 @@ public class Main {
               ctx.render("E=mc^2: " + energy + " = " + m.toString());
             })
 
+            // When somebody accesses the app using the /db route, a new row will be added to the tick table,
+            // and all the rows will then be returned so that they can be rendered in the output
             .get("db", ctx -> {
               boolean local = !"cedar-14".equals(System.getenv("STACK"));
 
